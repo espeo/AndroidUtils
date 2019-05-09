@@ -1,4 +1,4 @@
-package eu.espeo.androidutils.extentions
+package eu.espeo.androidutils.extensions
 
 import android.content.Context
 import android.graphics.drawable.Drawable

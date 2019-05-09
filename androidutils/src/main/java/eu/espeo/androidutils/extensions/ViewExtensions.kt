@@ -1,4 +1,4 @@
-package eu.espeo.androidutils.extentions
+package eu.espeo.androidutils.extensions
 
 import android.view.LayoutInflater
 import android.view.View
