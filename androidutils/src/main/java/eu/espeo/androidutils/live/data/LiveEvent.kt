@@ -1,6 +1,7 @@
 package eu.espeo.androidutils.live.data
 
 import androidx.annotation.MainThread
+import androidx.annotation.WorkerThread
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.Observer
@@ -49,12 +50,26 @@ class LiveEvent<T> : MediatorLiveData<T>() {
         super.setValue(t)
     }
 
+    @WorkerThread
+    override fun postValue(t: T?) {
+        observers.forEach { it.value.forEach { wrapper -> wrapper.newValue() } }
+        super.postValue(t)
+    }
+
     /**
      * Used for cases where T is Void, to make calls cleaner.
      */
     @MainThread
     fun call() {
         value = null
+    }
+
+    /**
+     * Used for cases where T is Void, to make calls cleaner.
+     */
+    @WorkerThread
+    fun post() {
+        postValue(null)
     }
 
     private class ObserverWrapper<T>(private val observer: Observer<T>) : Observer<T> {
