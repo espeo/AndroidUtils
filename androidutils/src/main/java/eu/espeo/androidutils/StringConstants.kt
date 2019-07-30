@@ -28,9 +28,6 @@ object StringConstants {
     const val HTML_BOLD_START = "<b>"
     const val HTML_BOLD_END = "</b>"
 
-    const val HEIGHT = "h"
-    const val WIDTH = "w"
-
     const val HTTP = "http"
     const val HTTP_FULL = "http://"
     const val QUESTION_MARK = "?"
@@ -43,11 +40,7 @@ object StringConstants {
 
     const val TEXT_PLAIN_TYPE = "text/plain"
 
-    const val MILION_PREFIX = "m"
-    const val THOUSAND_PREFIX = "k"
-
     const val OF = "of"
 
-    const val USDT = "usdt"
     const val ZERO = "0"
 }
