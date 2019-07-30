@@ -1,6 +1,7 @@
-package eu.espeo.androidutils.rx
+package com.maciejkozlowski.androidutils_rx.extensions
 
 import androidx.lifecycle.LiveDataReactiveStreams
+import com.maciejkozlowski.androidutils_rx.schedulers.SchedulersProvider
 import io.reactivex.*
 
 fun <T> Flowable<T>.toLiveData() = LiveDataReactiveStreams.fromPublisher(this)
