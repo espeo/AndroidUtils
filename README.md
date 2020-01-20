@@ -15,6 +15,7 @@ Step 2. Add the dependency
 
 ```
 dependencies {
-	implementation 'com.github.espeo:androidutils:1.0.0'
+	implementation 'com.github.espeo:androidutils:current_version'
 }
 ```
+[![](https://jitpack.io/v/espeo/androidutils.svg)](https://jitpack.io/#espeo/androidutils)
