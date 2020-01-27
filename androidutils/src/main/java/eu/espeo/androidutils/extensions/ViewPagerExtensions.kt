@@ -6,7 +6,7 @@ import androidx.viewpager.widget.ViewPager
  * Created by Maciej Kozłowski on 2020-01-20.
  */
 
-typealias PageSelectedListener = (Int) -> Unit
+private typealias PageSelectedListener = (Int) -> Unit
 
 fun ViewPager.addPageSelectedListener(onPageSelected: PageSelectedListener) {
     this.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
