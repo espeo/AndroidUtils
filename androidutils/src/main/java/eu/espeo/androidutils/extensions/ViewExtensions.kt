@@ -36,6 +36,10 @@ fun View.hide() {
     this.visibility = View.GONE
 }
 
+fun View.showOrInvisible(show: Boolean) {
+    if (show) show() else invisible()
+}
+
 fun View.invisible(invisible: Boolean) {
     if (invisible) invisible() else show()
 }
