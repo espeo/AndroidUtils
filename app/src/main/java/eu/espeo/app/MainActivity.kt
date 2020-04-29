@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
-import eu.espeo.androidutils.extensions.observe
 import eu.espeo.androidutils.extensions.observeData
-import eu.espeo.androidutils.extensions.observeLiveData
 import eu.espeo.androidutils.extensions.observeOptional
 import eu.espeo.androidutils.live.data.LiveEvent
 
