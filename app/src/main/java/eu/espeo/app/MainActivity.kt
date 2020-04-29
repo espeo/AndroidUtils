@@ -1,4 +1,4 @@
-package eu.espeo.androidutils
+package eu.espeo.app
 
 import android.os.Bundle
 import android.widget.Toast
