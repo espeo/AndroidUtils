@@ -11,9 +11,9 @@ import androidx.core.content.getSystemService
 object ClipboardUtils {
 
     fun copyToClipboard(context: Context, label: String, text: String) {
-        val clipboard = context.getSystemService<ClipboardManager>()!!
-        val clip = ClipData.newPlainText(label, text)
-        clipboard.primaryClip = clip
+        val clipboardManager = context.getSystemService<ClipboardManager>()!!
+        val clipData = ClipData.newPlainText(label, text)
+        clipboardManager.setPrimaryClip(clipData)
     }
 
     fun getFirstItemFromClipboard(context: Context): String? {
@@ -27,6 +27,7 @@ object ClipboardUtils {
 
     fun setEmptyClipboard(context: Context) {
         val clipboardManager = context.getSystemService<ClipboardManager>()!!
-        clipboardManager.primaryClip = ClipData.newPlainText(null, null)
+        val emptyClipData = ClipData.newPlainText(null, null)
+        clipboardManager.setPrimaryClip(emptyClipData)
     }
 }

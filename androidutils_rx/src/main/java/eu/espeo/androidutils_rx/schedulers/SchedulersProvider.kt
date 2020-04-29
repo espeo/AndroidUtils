@@ -1,4 +1,4 @@
-package com.maciejkozlowski.androidutils_rx.schedulers
+package eu.espeo.androidutils_rx.schedulers
 
 import io.reactivex.Scheduler
 

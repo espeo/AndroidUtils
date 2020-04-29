@@ -1,4 +1,4 @@
-package com.maciejkozlowski.androidutils_rx.model
+package eu.espeo.androidutils_rx.model
 
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable
