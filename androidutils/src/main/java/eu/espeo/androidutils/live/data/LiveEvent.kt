@@ -9,7 +9,7 @@ import java.util.*
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.atomic.AtomicBoolean
 
-class LiveEvent<T> : MediatorLiveData<T>() {
+open class LiveEvent<T> : MediatorLiveData<T>() {
 
     private val observers = ConcurrentHashMap<LifecycleOwner, MutableSet<ObserverWrapper<in T>>>()
 
@@ -45,31 +45,15 @@ class LiveEvent<T> : MediatorLiveData<T>() {
     }
 
     @MainThread
-    override fun setValue(t: T?) {
+    override fun setValue(t: T) {
         observers.forEach { it.value.forEach { wrapper -> wrapper.newValue() } }
         super.setValue(t)
     }
 
     @WorkerThread
-    override fun postValue(t: T?) {
+    override fun postValue(t: T) {
         observers.forEach { it.value.forEach { wrapper -> wrapper.newValue() } }
         super.postValue(t)
-    }
-
-    /**
-     * Used for cases where T is Void, to make calls cleaner.
-     */
-    @MainThread
-    fun call() {
-        value = null
-    }
-
-    /**
-     * Used for cases where T is Void, to make calls cleaner.
-     */
-    @WorkerThread
-    fun post() {
-        postValue(null)
     }
 
     private class ObserverWrapper<T>(private val observer: Observer<T>) : Observer<T> {
