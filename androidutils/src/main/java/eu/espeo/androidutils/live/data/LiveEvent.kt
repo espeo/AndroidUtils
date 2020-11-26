@@ -45,13 +45,13 @@ open class LiveEvent<T> : MediatorLiveData<T>() {
     }
 
     @MainThread
-    override fun setValue(t: T) {
+    override fun setValue(t: T?) {
         observers.forEach { it.value.forEach { wrapper -> wrapper.newValue() } }
         super.setValue(t)
     }
 
     @WorkerThread
-    override fun postValue(t: T) {
+    override fun postValue(t: T?) {
         observers.forEach { it.value.forEach { wrapper -> wrapper.newValue() } }
         super.postValue(t)
     }
