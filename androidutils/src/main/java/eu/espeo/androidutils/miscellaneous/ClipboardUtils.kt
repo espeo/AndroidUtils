@@ -18,11 +18,7 @@ object ClipboardUtils {
 
     fun getFirstItemFromClipboard(context: Context): String? {
         val clipboardManager = context.getSystemService<ClipboardManager>()!!
-        return if (clipboardManager.hasPrimaryClip()) {
-            clipboardManager.primaryClip!!.getItemAt(0).text.toString()
-        } else {
-            null
-        }
+        return clipboardManager.primaryClip?.getItemAt(0)?.text?.toString()
     }
 
     fun setEmptyClipboard(context: Context) {
